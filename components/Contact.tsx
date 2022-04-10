@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react"
 import { FaEnvelope, FaLocationArrow, FaMobile } from "react-icons/fa"
 
 const contact = [
@@ -20,33 +19,16 @@ const contact = [
 ]
 
 export const Contact = () => {
-    const ref = useRef(null)
-    const refCard = useRef(null)
-
-    useEffect(() => {
-      async function animate() {
-        if (ref.current) {
-            const sr = (await import("scrollreveal")).default
-            sr().reveal(ref.current, { delay: 500 })
-        }
-        if (refCard.current) {
-            const sr = (await import("scrollreveal")).default
-            sr().reveal(refCard.current, { delay: 500 })
-        }
-      }
-      animate()
-    }, [])
-
     return (
-        <div className="mt-32">
-            <div ref={ref} className="flex flex-col gap-2 items-center justify-center">
+        <div className="mt-32" id="contact">
+            <div className="flex flex-col gap-2 items-center justify-center">
                 <h1 className="text-xl md:text-3xl font-bold">Contact</h1>
                 <span className="text-sm md:text-base text-center text-gray-500">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor, sunt!
                 </span>
             </div>
 
-            <div ref={refCard} className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-10 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-10 mt-12">
                 <div className="border bg-white dark:bg-gray-800 dark:border-gray-700 border-gray-200 rounded-xl p-10">
                     <ul className="flex flex-col gap-5 mb-10">
                         {contact.map(({name, detail, icon}, index) => {

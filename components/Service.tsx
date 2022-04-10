@@ -1,84 +1,93 @@
-import { useEffect, useRef } from "react"
+import Image from "next/image"
+import ImageTwo from '../public/image2.svg'
+import ImageThree from '../public/image3.svg'
 
 const service = [
     {
-        title: 'Service 1',
-        description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati corporis beatae consectetur porro, libero aliquam illum adipisci quod explicabo. Deserunt, corporis excepturi! Magnam quos obcaecati distinctio repudiandae temporibus recusandae modi.',
+        image: ImageTwo,
+        title: 'Teknologi Industri',
+        description: 'Teknologi Industri adalah hasil pengembangan, perbaikan, invensi, dan/atau inovasi dalam bentuk teknologi proses dan teknologi produk termasuk rancang bangun dan perekayasaan, metode, dan/atau sistem yang diterapkan dalam kegiatan Industri. Kami melayani jasa untuk beberapa teknologi industri seperti:',
+        children: [
+            { title: 'Situs Website' },
+            { title: 'Aplikasi Mobile' },
+            { title: 'UI/UX' },
+            { title: 'Aplikasi Desktop' },
+            { title: 'AI & AR' },
+        ]
     },
     {
-        title: 'Service 2',
-        description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati corporis beatae consectetur porro, libero aliquam illum adipisci quod explicabo. Deserunt, corporis excepturi! Magnam quos obcaecati distinctio repudiandae temporibus recusandae modi.',
-    },
-    {
-        title: 'Service 3',
-        description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati corporis beatae consectetur porro, libero aliquam illum adipisci quod explicabo. Deserunt, corporis excepturi! Magnam quos obcaecati distinctio repudiandae temporibus recusandae modi.',
-    },
-    {
-        title: 'Service 4',
-        description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati corporis beatae consectetur porro, libero aliquam illum adipisci quod explicabo. Deserunt, corporis excepturi! Magnam quos obcaecati distinctio repudiandae temporibus recusandae modi.',
+        image: ImageThree,
+        title: 'Production House',
+        description: 'Industri kreatif yang merujuk kepada perusahaan yang menyokong produksi karya-karya audio, visual, audiovisual, dan acara televisi atau radio sesuai peraturan perundang-undangan yang berlaku di suatu negara.',
+        children: []
     },
 ]
 
 export const Service = () => {
-    const ref = useRef(null)
-    const refCardOdd = useRef(null)
-    const refCardEven = useRef(null)
-
-    useEffect(() => {
-      async function animate() {
-        if (ref.current) {
-            const sr = (await import("scrollreveal")).default
-            sr().reveal(ref.current, { delay: 500 })
-        }
-        if (refCardOdd.current) {
-            const sr = (await import("scrollreveal")).default
-            sr().reveal(refCardOdd.current, { delay: 500 })
-        }
-
-        if (refCardEven.current) {
-            const sr = (await import("scrollreveal")).default
-            sr().reveal(refCardEven.current, { delay: 500 })
-        }
-      }
-      animate()
-    }, [])
-
     return (
-        <div className="mt-20">
-            <div ref={ref} className="flex flex-col gap-2 items-center justify-center">
-                <h1 className="text-xl md:text-3xl font-bold">Service</h1>
+        <div className="mt-20" id="service">
+            <div className="flex flex-col gap-2 items-center justify-center">
+                <h1 className="text-xl md:text-3xl font-bold">Layanan</h1>
                 <span className="text-sm md:text-base text-center text-gray-500">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor, sunt!
+                    Kami memiliki layanan yang dapat membuat anda mengembangkan bisnis anda.
                 </span>
             </div>
 
             <div className="flex flex-col gap-10 md:gap-20 mt-12">
-                {service.map(({title, description}, index) => {
+                {service.map(({image, title, description, children}, index) => {
                     if (index % 2 === 0) {
                         return (
-                            <div ref={refCardOdd} key={index} className="flex flex-col-reverse gap-5 md:flex-row">
+                            <div key={index} className="flex flex-col-reverse gap-5 md:flex-row">
                                 <div className="md:w-1/2 md:pr-8">
-                                    <div className="bg-gray-200 w-xl h-72 rounded-xl"></div>
+                                    <div className="rounded-xl w-xl h-72 object-cover">
+                                        <Image src={image} alt="Image Service" layout="responsive"/>
+                                    </div>
                                 </div>
                                 <div className="md:w-1/2 md:pl-8 flex flex-col justify-center">
                                     <h1 className="text-xl md:text-2xl font-bold">{title}</h1>
                                     <p className="pt-2 leading-relaxed text-sm md:text-base text-gray-500 max-w-md">
                                         {description}
                                     </p>
+                                    <div className="grid grid-cols-3 gap-5 mt-5">
+                                        {children.map(({title}, idx) => {
+                                            return (
+                                                <span 
+                                                    key={idx} 
+                                                    className="border rounded-xl flex items-center justify-center py-3 px-5"
+                                                >
+                                                    {title}
+                                                </span>
+                                            )
+                                        })}
+                                    </div>
                                 </div>
                             </div>
                         )
                     } else {
                         return (
-                            <div ref={refCardEven} key={index} className="flex flex-col gap-5 md:flex-row">
+                            <div key={index} className="flex flex-col gap-5 md:flex-row">
                                 <div className="md:w-1/2 md:pr-8 flex flex-col justify-center">
                                     <h1 className="text-xl md:text-2xl font-bold">{title}</h1>
                                     <p className="pt-2 leading-relaxed text-sm md:text-base text-gray-500 max-w-md">
                                         {description}
                                     </p>
+                                    <div className="grid grid-cols-3 gap-5 mt-5">
+                                        {children.map(({title}, idx) => {
+                                            return (
+                                                <span 
+                                                    key={idx} 
+                                                    className="border rounded-xl flex items-center justify-center py-3 px-5"
+                                                >
+                                                    {title}
+                                                </span>
+                                            )
+                                        })}
+                                    </div>
                                 </div>
                                 <div className="md:w-1/2 md:pl-8">
-                                    <div className="bg-gray-200 w-xl h-72 rounded-xl"></div>
+                                    <div className="w-xl h-72 rounded-xl">
+                                        <Image src={image} alt="Image Service" layout="responsive"/>
+                                    </div>
                                 </div>
                             </div>
                         )

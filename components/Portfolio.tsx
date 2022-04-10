@@ -6,7 +6,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { useEffect, useRef } from 'react';
 
 const portfolio = [
     {
@@ -52,35 +51,18 @@ const portfolio = [
 ]
 
 export const Portfolio = () => {
-    const ref = useRef(null)
-    const refCard = useRef(null)
-
-    useEffect(() => {
-      async function animate() {
-        if (ref.current) {
-            const sr = (await import("scrollreveal")).default
-            sr().reveal(ref.current, { delay: 500 })
-        }
-        if (refCard.current) {
-            const sr = (await import("scrollreveal")).default
-            sr().reveal(refCard.current, { delay: 500 })
-        }
-      }
-      animate()
-    }, [])
-
     return (
-        <div ref={ref} className="mt-32">
+        <div className="mt-32" id="projects">
             <div className="flex flex-col gap-2 items-center justify-center">
-                <h1 className="text-xl md:text-3xl font-bold">Portfolio</h1>
+                <h1 className="text-xl md:text-3xl font-bold">Projects</h1>
                 <span className="text-sm md:text-base text-center text-gray-500">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor, sunt!
+                    Kami memiliki layanan yang dapat membuat anda mengembangkan bisnis anda.
                 </span>
             </div>
 
             { portfolio.map(({ image, detail }, index) => {
                 return (
-                    <div ref={refCard} className="grid grid-cols-1 md:grid-cols-5 gap-10 mt-12" key={ index }>
+                    <div className="grid grid-cols-1 md:grid-cols-5 gap-10 mt-12" key={ index }>
                         <div className="col-span-3 md:col-span-2">
                             <div className="w-full md:pr-8">
                                 <div className="bg-gray-200 w-full h-72 rounded-xl"></div>
@@ -98,8 +80,6 @@ export const Portfolio = () => {
                                 slidesPerView={3}
                                 navigation
                                 pagination={{ clickable: true }}
-                                onSwiper={(swiper) => console.log(swiper)}
-                                onSlideChange={() => console.log('slide change')}
                             >
                                 { detail.map(({title, image, alt}, index) => {
                                     return(
