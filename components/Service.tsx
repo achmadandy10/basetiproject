@@ -17,7 +17,7 @@ const service = [
     },
     {
         image: ImageThree,
-        title: 'Production House',
+        title: 'Rumah Produksi',
         description: 'Industri kreatif yang merujuk kepada perusahaan yang menyokong produksi karya-karya audio, visual, audiovisual, dan acara televisi atau radio sesuai peraturan perundang-undangan yang berlaku di suatu negara.',
         children: []
     },

@@ -1,114 +1,65 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 
+import Hammam from '../public/hammam.jpeg'
+import Furqon from '../public/furqon.jpeg'
+import Alkhatami from '../public/alkhatami.jpeg'
+import Mario from '../public/mario.jpeg'
+import Abiyyu from '../public/abiyyu.jpeg'
+import Rangga from '../public/rangga.jpeg'
+import Reza from '../public/reza.jpeg'
+import Deka from '../public/deka.jpeg'
+import Wiranto from '../public/wiranto.jpeg'
+
 import "swiper/css";
 import "swiper/css/pagination";
+import Image from "next/image";
 
 const team = [
     { 
-        name: "Team 1", 
-        image: "#", 
-        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae blanditiis fugiat repudiandae ipsa nisi dolor fuga aperiam perferendis! Maiores, ex." 
+        name: "Muhamad Hammam Miftah", 
+        image: Hammam, 
+        about: "UI/UX Designer" 
     },
     { 
-        name: "Team 2", 
-        image: "#", 
-        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae blanditiis fugiat repudiandae ipsa nisi dolor fuga aperiam perferendis! Maiores, ex." 
+        name: "Muhammad Furqon Pakpahan", 
+        image: Furqon, 
+        about: "Mobile Developer" 
     },
     { 
-        name: "Team 3", 
-        image: "#", 
-        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae blanditiis fugiat repudiandae ipsa nisi dolor fuga aperiam perferendis! Maiores, ex." 
+        name: "Ahmad Alkhatami", 
+        image: Alkhatami, 
+        about: "Web Developer" 
     },
     { 
-        name: "Team 4", 
-        image: "#", 
-        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae blanditiis fugiat repudiandae ipsa nisi dolor fuga aperiam perferendis! Maiores, ex." 
+        name: "Mario Emmanuel Sede", 
+        image: Mario, 
+        about: "Konsultant IT" 
     },
     { 
-        name: "Team 5", 
-        image: "#", 
-        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae blanditiis fugiat repudiandae ipsa nisi dolor fuga aperiam perferendis! Maiores, ex." 
+        name: "Abiyyu Hasian Ma'aruf Lubis", 
+        image: Abiyyu, 
+        about: "Event Organizer" 
     },
     { 
-        name: "Team 6", 
-        image: "#", 
-        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae blanditiis fugiat repudiandae ipsa nisi dolor fuga aperiam perferendis! Maiores, ex." 
+        name: "Rangga Yustisio", 
+        image: Rangga, 
+        about: "Production House" 
     },
     { 
-        name: "Team 7", 
-        image: "#", 
-        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae blanditiis fugiat repudiandae ipsa nisi dolor fuga aperiam perferendis! Maiores, ex." 
+        name: "Reza Pahlevi", 
+        image: Reza, 
+        about: "AI/AR" 
     },
     { 
-        name: "Team 8", 
-        image: "#", 
-        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae blanditiis fugiat repudiandae ipsa nisi dolor fuga aperiam perferendis! Maiores, ex." 
+        name: "Achmad Andy Dekanovy", 
+        image: Deka, 
+        about: "Desktop Developer" 
     },
     { 
-        name: "Team 9", 
-        image: "#", 
-        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae blanditiis fugiat repudiandae ipsa nisi dolor fuga aperiam perferendis! Maiores, ex." 
-    },
-    { 
-        name: "Team 10", 
-        image: "#", 
-        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae blanditiis fugiat repudiandae ipsa nisi dolor fuga aperiam perferendis! Maiores, ex." 
-    },
-    { 
-        name: "Team 11", 
-        image: "#", 
-        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae blanditiis fugiat repudiandae ipsa nisi dolor fuga aperiam perferendis! Maiores, ex." 
-    },
-    { 
-        name: "Team 12", 
-        image: "#", 
-        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae blanditiis fugiat repudiandae ipsa nisi dolor fuga aperiam perferendis! Maiores, ex." 
-    },
-    { 
-        name: "Team 13", 
-        image: "#", 
-        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae blanditiis fugiat repudiandae ipsa nisi dolor fuga aperiam perferendis! Maiores, ex." 
-    },
-    { 
-        name: "Team 14", 
-        image: "#", 
-        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae blanditiis fugiat repudiandae ipsa nisi dolor fuga aperiam perferendis! Maiores, ex." 
-    },
-    { 
-        name: "Team 15", 
-        image: "#", 
-        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae blanditiis fugiat repudiandae ipsa nisi dolor fuga aperiam perferendis! Maiores, ex." 
-    },
-    { 
-        name: "Team 16", 
-        image: "#", 
-        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae blanditiis fugiat repudiandae ipsa nisi dolor fuga aperiam perferendis! Maiores, ex." 
-    },
-    { 
-        name: "Team 17", 
-        image: "#", 
-        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae blanditiis fugiat repudiandae ipsa nisi dolor fuga aperiam perferendis! Maiores, ex." 
-    },
-    { 
-        name: "Team 18", 
-        image: "#", 
-        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae blanditiis fugiat repudiandae ipsa nisi dolor fuga aperiam perferendis! Maiores, ex." 
-    },
-    { 
-        name: "Team 19", 
-        image: "#", 
-        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae blanditiis fugiat repudiandae ipsa nisi dolor fuga aperiam perferendis! Maiores, ex." 
-    },
-    { 
-        name: "Team 20", 
-        image: "#", 
-        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae blanditiis fugiat repudiandae ipsa nisi dolor fuga aperiam perferendis! Maiores, ex." 
-    },
-    { 
-        name: "Team 21", 
-        image: "#", 
-        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae blanditiis fugiat repudiandae ipsa nisi dolor fuga aperiam perferendis! Maiores, ex." 
+        name: "Wiranto Millennium", 
+        image: Wiranto, 
+        about: "Teknologi Industri" 
     },
 ]
 
@@ -126,10 +77,10 @@ export const Team = () => {
                 <SwiperSlide key={i} className="grid grid-cols-2 gap-5">
                     { team.slice(0, 4).map(({ name, image, about }, index) => {
                             return (
-                                <div key={index} className="p-10 border bg-white dark:bg-gray-800 dark:border-gray-700 border-gray-200 rounded-xl gap-5 flex flex-col items-center justify-center">
+                                <div key={index} className="p-10 border bg-white dark:bg-gray-800 dark:border-gray-700 border-gray-200 rounded-xl gap-2 flex flex-col items-center justify-center">
                                     <div className="flex flex-col items-center justify-center gap-4">
-                                        <div className="rounded-full w-24 h-24 bg-gray-200">
-                                        
+                                        <div className="rounded-full object-cover w-24 h-24 bg-gray-200">
+                                            <Image src={image} alt="Avatar" width={96} height={96} className="object-cover rounded-full"/>
                                         </div>
                                         <span className="text-center font-semibold">{ name }</span>
                                     </div>
@@ -145,10 +96,10 @@ export const Team = () => {
                 <SwiperSlide key={i} className="grid grid-cols-2 gap-5">
                     { team.slice(i*4, (((i+1))*2)*2).map(({ name, image, about }, index) => {
                             return (
-                                <div key={index} className="p-10 border bg-white dark:bg-gray-800 dark:border-gray-700 border-gray-200 rounded-xl gap-5 flex flex-col items-center justify-center">
+                                <div key={index} className="p-10 border bg-white dark:bg-gray-800 dark:border-gray-700 border-gray-200 rounded-xl gap-2 flex flex-col items-center justify-center">
                                     <div className="flex flex-col items-center justify-center gap-4">
-                                        <div className="rounded-full w-24 h-24 bg-gray-200">
-                                        
+                                        <div className="rounded-full object-cover w-24 h-24 bg-gray-200">
+                                            <Image src={image} alt="Avatar" width={96} height={96} className="object-cover rounded-full"/>
                                         </div>
                                         <span className="text-center font-semibold">{ name }</span>
                                     </div>
@@ -166,9 +117,9 @@ export const Team = () => {
     return(
         <div className="mt-32" id="team">
             <div className="flex flex-col gap-2 items-center justify-center">
-                <h1 className="text-xl md:text-3xl font-bold">Team</h1>
+                <h1 className="text-xl md:text-3xl font-bold">Tim</h1>
                 <span className="text-sm md:text-base text-center text-gray-500">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor, sunt!
+                    Team kami adalah orang-orang yang ahli di bidangnya masing-masing.
                 </span>
             </div>
             
