@@ -10,6 +10,7 @@ import Rangga from '../public/rangga.jpeg'
 import Reza from '../public/reza.jpeg'
 import Deka from '../public/deka.jpeg'
 import Wiranto from '../public/wiranto.jpeg'
+import Kamal from '../public/kamal.jpeg'
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -60,6 +61,11 @@ const team = [
         name: "Wiranto Millennium", 
         image: Wiranto, 
         about: "Teknologi Industri" 
+    },
+    { 
+        name: "Taufik Kamal Maulana", 
+        image: Kamal, 
+        about: "Finance" 
     },
 ]
 
